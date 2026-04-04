@@ -1,14 +1,16 @@
 public class ThreadSapo extends Thread{
     private Sapo sapo;
+    public int pista;
     public double tempoProva;
-    public ThreadSapo(Sapo sapo){
+    public ThreadSapo(Sapo sapo, int pista){
         this.sapo = sapo;
+        this.pista = pista;
     }
 
     @Override
     public void run(){
         double inicio = System.currentTimeMillis();
-        while(sapo.distanciaPercorrida < 30){ //tamanho da pista = 30m
+        while(sapo.distanciaPercorrida < pista){
             sapo.pular();
         }
         double fim = System.currentTimeMillis();
