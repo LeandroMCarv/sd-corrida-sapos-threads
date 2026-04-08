@@ -1,6 +1,14 @@
 public class Sapo {
-    public int distanciaPercorrida;
-    public int numero;
+    private int distanciaPercorrida;
+    private int numero;
+
+    public int getDistanciaPercorrida(){
+        return distanciaPercorrida;
+    }
+
+    public int getNumero(){
+        return numero;
+    }
 
     public Sapo(int numeroSapo){
         this.numero = numeroSapo;
