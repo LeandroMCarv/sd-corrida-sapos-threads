@@ -1,9 +1,8 @@
 public class ThreadSapo extends Thread{
     Sapo sapo;
-    public int pista;
-    public double tempoProva;
+    Pista pista;
     
-    public ThreadSapo(Sapo sapo, int pista){
+    public ThreadSapo(Sapo sapo, Pista pista){
         this.sapo = sapo;
         this.pista = pista;
     }
@@ -14,11 +13,9 @@ public class ThreadSapo extends Thread{
 
     @Override
     public void run(){
-        double inicio = System.nanoTime();
-        while(sapo.distanciaPercorrida < pista){
+        while(sapo.getDistanciaPercorrida() < pista.getTamanho()){
             sapo.pular();
         }
-        double fim = System.nanoTime();
-        tempoProva = fim - inicio;
+        System.out.println("Sapo " + sapo.getNumero() + " chegou em: " + pista.getPosicaoChegada());
     }
 }
